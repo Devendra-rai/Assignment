@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Unity;
+using UnityContainerAssignment.Class;
+using UnityContainerAssignment.Interface;
 namespace UnityContainerAssignment
 {
     class Program
@@ -27,72 +29,7 @@ namespace UnityContainerAssignment
 
 
         }
-        interface ICollege
-        {
-
-            void CollegeDetail();
-        }
-
-        interface IUniversity
-        {
-            void UniversityDetail();
-        }
-
-        class CollegeDetailManager
-        {
-            private ICollege _college = null;
-            private IUniversity _university = null;
-            public CollegeDetailManager(ICollege college, IUniversity university)
-            {
-                _college = college;
-                _university = university;
-            }
-
-            public void CollegeDetailHandler()
-            {
-
-                _college.CollegeDetail();
-                _university.UniversityDetail();
-            }
-        }
-
-
-        class GovernmentCollege : ICollege , IUniversity
-        {
-            public void CollegeDetail()
-            {
-                Console.WriteLine("Government College");
-            }
-            public void UniversityDetail()
-            {
-                Console.WriteLine("Government College University");
-            }
-        }
-
-        class PrivateCollege : ICollege, IUniversity
-        {
-            public void CollegeDetail()
-            {
-                Console.WriteLine("Private college");
-
-            }
-            public void UniversityDetail()
-            {
-                Console.WriteLine("RGPV Bhopal");
-            }
-        }
-
-        class SemiGovernmentCollege : ICollege, IUniversity
-        {
-            public void CollegeDetail()
-            {
-                Console.WriteLine("Semi Government College");
-            }
-
-            public void UniversityDetail()
-            {
-                Console.WriteLine("RDVV University");
-            }
-        }
+      
+       
     }
 }
